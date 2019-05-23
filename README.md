@@ -16,7 +16,7 @@ Allows for options to create a new test run on **cypress run** or if you want th
 ## Install
 
 ```shell
-$ npm install salty-cypress-testrail-reporter --save-dev
+$ npm install cypress-testrail-reporter --save-dev
 ```
 
 ## Usage
@@ -89,7 +89,7 @@ You can read the whole TestRail documentation [here](http://docs.gurock.com/).
 
 ## Author
 
-Author: Spencer Kekauoha - [github](https://github.com/skekauoha)
+Author: Yulduz Ibragimova - [github](https://github.com/yulduz-om)
 
 ## License
 
@@ -99,4 +99,3 @@ This project is licensed under the [MIT license](/LICENSE.md).
 
 * [Milutin Savovic](https://github.com/mickosav), author of the [cypress-testrail-reporter](https://github.com/Vivify-Ideas/cypress-testrail-reporter) repository that was cloned.
 * [Spencer Kekauoha](https://github.com/skekauoha), owner of the [salty-cypress-testrail-reporter](https://github.com/skekauoha/salty-cypress-testrail-reporter) repository that was forked.
-* [Valerie Thoma](https://github.com/ValerieThoma) and [Aileen Santos](https://github.com/asantos3026) for proofreading the README.md file and making it more understandable.
