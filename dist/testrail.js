@@ -43,7 +43,7 @@ var TestRail = /** @class */ (function () {
                 password: this.options.password,
             },
             data: JSON.stringify({
-                //suite_id: this.options.suiteId,
+                runId: this.options.runId,
                 name: name,
                 description: description,
                 include_all: true,
