@@ -1,5 +1,5 @@
 {
-  "name": "salty-cypress-testrail-reporter",
+  "name": "cypress-testrail-reporter",
   "version": "1.3.7",
   "description": "A Testrail reporter for cypress including TestRail API basic library",
   "main": "index.js",
@@ -10,14 +10,14 @@
     "reporter"
   ],
   "author": {
-    "name": "Spencer Kekauoha",
-    "email": "spkekauoha@gmail.com"
+    "name": "Yulduz",
+    "email": "yibragimova@onemedical.com"
   },
   "license": "MIT",
   "readmeFilename": "README.md",
   "repository": {
     "type": "git",
-    "url": "https://github.com/skekauoha/salty-cypress-testrail-reporter"
+    "url": "https://github.com/onemedical/cypress-testrail-reporter"
   },
   "bugs": {
     "url": ""
