@@ -28,7 +28,7 @@ var CypressTestRailReporter = /** @class */ (function (_super) {
         _this.validate(reporterOptions, 'username');
         _this.validate(reporterOptions, 'password');
         _this.validate(reporterOptions, 'projectId');
-        _this.validate(reporterOptions, 'suiteId');
+        // _this.validate(reporterOptions, 'suiteId');
         _this.validate(reporterOptions, 'createTestRun');
         runner.on('start', function () {
             console.log("Running Test Case...");

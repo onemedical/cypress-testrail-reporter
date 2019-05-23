@@ -3,7 +3,7 @@ export interface TestRailOptions {
   username: string;
   password: string;
   projectId: number;
-  suiteId: number;
+  // suiteId: number;
   createTestRun: boolean;
   runId: number;
   assignedToId?: number;

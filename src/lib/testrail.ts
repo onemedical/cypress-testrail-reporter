@@ -50,7 +50,7 @@ export class TestRail {
           password: this.options.password,
       },
       data: JSON.stringify({
-          suite_id: this.options.suiteId,
+          // suite_id: this.options.suiteId,
           name,
           description,
           include_all: true,
