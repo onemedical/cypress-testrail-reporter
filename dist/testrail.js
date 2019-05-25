@@ -9,57 +9,59 @@ var TestRail = /** @class */ (function () {
         this.projectId = 2;
         this.base = "https://" + options.domain + "/index.php?/api/v2";
     }
-    TestRail.prototype.isRunToday = function () {
-        var _this = this;
-        return axios({
-            method: 'get',
-            url: this.base + "/get_runs/" + this.projectId,
-            headers: { 'Content-Type': 'application/json' },
-            auth: {
-                username: this.options.username,
-                password: this.options.password,
-            }
-        }).then(function (response) {
-            _this.lastRunDate = response.data[0].description;
-            // set current date with same format as this.lastRunDate
-            _this.currentDate = moment(new Date()).format('L');
-            if (_this.lastRunDate === _this.currentDate) {
-                console.log("Test Run already created today. posting results to Test Run ID: R" + response.data[0].id);
-                return true;
-            }
-            return false;
-        });
-        // .catch(error => console.error(error));
-    };
-    TestRail.prototype.createRun = function (name, description) {
-        var _this = this;
-        // If the lastRunDate of the most current test run is equal to today's date, don't create a new test run.
-        axios({
-            method: 'post',
-            url: this.base + "/add_run/" + this.options.projectId,
-            headers: { 'Content-Type': 'application/json' },
-            auth: {
-                username: this.options.username,
-                password: this.options.password,
-            },
-            data: JSON.stringify({
-                runId: this.options.runId,
-                name: name,
-                description: description,
-                include_all: true,
-            }),
-        })
-            .then(function (response) {
-            console.log('Creating test run... ---> run id is:  ', response.data.id);
-            _this.runId = response.data.id;
-        });
-        // .catch(error => console.(error));
-    };
+    // TestRail.prototype.isRunToday = function () {
+    //     var _this = this;
+    //     return axios({
+    //         method: 'get',
+    //         url: this.base + "/get_runs/" + this.projectId,
+    //         headers: { 'Content-Type': 'application/json' },
+    //         auth: {
+    //             username: this.options.username,
+    //             password: this.options.password,
+    //         }
+    //     }).then(function (response) {
+    //         _this.lastRunDate = response.data[0].description;
+    //         // set current date with same format as this.lastRunDate
+    //         _this.currentDate = moment(new Date()).format('L');
+    //         if (_this.lastRunDate === _this.currentDate) {
+    //             console.log("Test Run already created today. posting results to Test Run ID: R" + response.data[0].id);
+    //             return true;
+    //         }
+    //         return false;
+    //     });
+    //     // .catch(error => console.error(error));
+    // };
+    // TestRail.prototype.createRun = function (name, description) {
+    //     var _this = this;
+    //     // If the lastRunDate of the most current test run is equal to today's date, don't create a new test run.
+    //     axios({
+    //         method: 'post',
+    //         url: this.base + "/add_run/" + this.options.projectId,
+    //         headers: { 'Content-Type': 'application/json' },
+    //         auth: {
+    //             username: this.options.username,
+    //             password: this.options.password,
+    //         },
+    //         data: JSON.stringify({
+    //             runId: this.options.runId,
+    //             name: name,
+    //             description: description,
+    //             include_all: true,
+    //         }),
+    //     })
+    //         .then(function (response) {
+    //         console.log('Creating test run... ---> run id is:  ', response.data.id);
+    //         _this.runId = response.data.id;
+    //     });
+    //     // .catch(error => console.(error));
+    // };
     TestRail.prototype.publishResults = function (results) {
-        var _this = this;
-        if (!this.options.createTestRun) {
-            this.runId = this.options.runId;
-        }
+        // var _this = this;
+        // if (!this.options.createTestRun) {
+        //     this.runId = this.options.runId;
+        // }
+        this.runId = this.options.runId;
+        console.log('INSIDE PUBLISH RESULTS')
         axios({
             method: 'get',
             url: this.base + "/get_runs/" + this.projectId,
@@ -74,6 +76,8 @@ var TestRail = /** @class */ (function () {
             publishToAPI();
         });
         var publishToAPI = function () {
+            console.log('INSIDE PUBLISH TO API')
+
             axios({
                 method: 'post',
                 url: _this.base + "/add_results_for_cases/" + _this.runId,

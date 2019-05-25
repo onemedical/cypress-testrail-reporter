@@ -65,11 +65,18 @@ export class TestRail {
 
   public publishResults(results: TestRailResult[]) {
 
-    if (!this.options.createTestRun) {
-      this.runId = this.options.runId;
-    }
+    // if (!this.options.createTestRun) {
+    //   this.runId = this.options.runId;
+    // }
 
-    axios({
+      console.log('INSIDE THE PUBLISH RESULTS')
+   this.runId = this.options.runId;
+   console.log('RUN_ID:'+ this.runId)
+   this.projectId = this.options.projectId;
+   console.log('PROJECT_ID:'+ this.projectId)
+
+
+      axios({
       method: 'get',
       url: `${this.base}/get_runs/${this.projectId}`,
       headers: { 'Content-Type': 'application/json' },
@@ -84,7 +91,14 @@ export class TestRail {
       })
 
     const publishToAPI = () => {
-      axios({
+        console.log('INSIDE THE PUBLISH PUBLISH TO API')
+        this.runId = this.options.runId;
+        console.log('RUN_ID:'+ this.runId)
+        this.projectId = this.options.projectId;
+        console.log('PROJECT_ID:'+ this.projectId)
+        console.log('STARTING THE API INVOKATION NOW')
+
+        axios({
         method: 'post',
         url: `${this.base}/add_results_for_cases/${this.runId}`,
         headers: { 'Content-Type': 'application/json' },

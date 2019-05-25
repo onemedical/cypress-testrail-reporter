@@ -25,17 +25,17 @@ export class CypressTestRailReporter extends reporters.Spec {
 
     runner.on('start', () => {
       console.log("Running Test Case...")
-      const executionDateTime = moment().format('L');
-      const name = `${reporterOptions.runName || 'Automated test run'} - ${executionDateTime}`;
-      const description = executionDateTime;
-
-      this.testRail.isRunToday().then(res => {
-        this.isRun = res;
-
-        if (!this.isRun) {
-          reporterOptions.createTestRun === true && this.testRail.createRun(name, description);
-        }
-      });
+      // const executionDateTime = moment().format('L');
+      // const name = `${reporterOptions.runName || 'Automated test run'} - ${executionDateTime}`;
+      // const description = executionDateTime;
+      //
+      // this.testRail.isRunToday().then(res => {
+      //   this.isRun = res;
+      //
+      //   if (!this.isRun) {
+      //     reporterOptions.createTestRun === true && this.testRail.createRun(name, description);
+      //   }
+      // });
     });
 
     runner.on('pass', test => {

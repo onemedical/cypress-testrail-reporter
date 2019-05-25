@@ -29,18 +29,17 @@ var CypressTestRailReporter = /** @class */ (function (_super) {
         _this.validate(reporterOptions, 'password');
         _this.validate(reporterOptions, 'projectId');
         _this.validate(reporterOptions, 'runId');
-        _this.validate(reporterOptions, 'createTestRun');
         runner.on('start', function () {
             console.log("Running Test Case...");
-            var executionDateTime = moment().format('L');
-            var name = (reporterOptions.runName || 'Automated test run') + " - " + executionDateTime;
-            var description = executionDateTime;
-            _this.testRail.isRunToday().then(function (res) {
-                _this.isRun = res;
-                if (!_this.isRun) {
-                    reporterOptions.createTestRun === true && _this.testRail.createRun(name, description);
-                }
-            });
+            // var executionDateTime = moment().format('L');
+            // var name = (reporterOptions.runName || 'Automated test run') + " - " + executionDateTime;
+            // var description = executionDateTime;
+            // _this.testRail.isRunToday().then(function (res) {
+            //     _this.isRun = res;
+            //     if (!_this.isRun) {
+            //         reporterOptions.createTestRun === true && _this.testRail.createRun(name, description);
+            //     }
+            // });
         });
         runner.on('pass', function (test) {
             var _a;
