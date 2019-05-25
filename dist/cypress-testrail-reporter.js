@@ -11,7 +11,6 @@ var __extends = (this && this.__extends) || (function () {
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
 var mocha_1 = require("mocha");
-var moment = require("moment");
 var testrail_1 = require("./testrail");
 var shared_1 = require("./shared");
 var testrail_interface_1 = require("./testrail.interface");
@@ -28,19 +27,17 @@ var CypressTestRailReporter = /** @class */ (function (_super) {
         _this.validate(reporterOptions, 'username');
         _this.validate(reporterOptions, 'password');
         _this.validate(reporterOptions, 'projectId');
-        _this.validate(reporterOptions, 'runId');
+
+        /**
+         * Gets invoked before the test case starts running
+         */
         runner.on('start', function () {
             console.log("Running Test Case...");
-            // var executionDateTime = moment().format('L');
-            // var name = (reporterOptions.runName || 'Automated test run') + " - " + executionDateTime;
-            // var description = executionDateTime;
-            // _this.testRail.isRunToday().then(function (res) {
-            //     _this.isRun = res;
-            //     if (!_this.isRun) {
-            //         reporterOptions.createTestRun === true && _this.testRail.createRun(name, description);
-            //     }
-            // });
         });
+
+        /**
+         * Gets invoked in the event of the test case passing
+         */
         runner.on('pass', function (test) {
             var _a;
             var caseIds = shared_1.titleToCaseIds(test.title);
@@ -55,6 +52,10 @@ var CypressTestRailReporter = /** @class */ (function (_super) {
                 (_a = _this.results).push.apply(_a, results);
             }
         });
+
+        /**
+         * Gets invoked in the event of the test case failure
+         */
         runner.on('fail', function (test) {
             var _a;
             var caseIds = shared_1.titleToCaseIds(test.title);
@@ -69,6 +70,10 @@ var CypressTestRailReporter = /** @class */ (function (_super) {
                 (_a = _this.results).push.apply(_a, results);
             }
         });
+
+        /**
+         * Gets invoked after the test case finishes running, and publishes the results to TestRail via the API
+         */
         runner.on('end', function () {
             if (_this.results.length == 0) {
                 console.log('\n', chalk.magenta.underline.bold('(TestRail Reporter)'));
