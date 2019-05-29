@@ -1,7 +1,7 @@
 # TestRail Reporter for Cypress
 Publishes [Cypress](https://www.cypress.io/) runs on TestRail.
 
-Cloned from the original package [cypress-testrail-reporter](https://github.com/Vivify-Ideas/cypress-testrail-reporter) by [Milutin Savovic](https://github.com/mickosav)
+Forked from the original package [salty-cypress-testrail-reporter](https://github.com/skekauoha/salty-cypress-testrail-reporter) by [Spencer Kekauoha](https://github.com/skekauoha)
 
 
 ## Install
