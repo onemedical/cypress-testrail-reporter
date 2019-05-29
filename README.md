@@ -3,15 +3,11 @@ Publishes [Cypress](https://www.cypress.io/) runs on TestRail.
 
 Cloned from the original package [cypress-testrail-reporter](https://github.com/Vivify-Ideas/cypress-testrail-reporter) by [Milutin Savovic](https://github.com/mickosav)
 
-The original package by Milutin is awesome!
-
-Allows for options to create a new test run on **cypress run** or if you want the option to create one manually.
-
 
 ## Install
 
 ```shell
-$ npm install cypress-testrail-reporter --save-dev
+$  npm install git+ssh://git@github.com:onemedical/cypress-testrail-reporter.git --save-dev
 ```
 
 ## Usage
