@@ -21,7 +21,7 @@ Add reporter to your `cypress.json`:
 ```javascript
 ...
 {
-  "reporter": "salty-cypress-testrail-reporter",
+  "reporter": "cypress-testrail-reporter",
   "reporterOptions": {
     "domain": "yourdomain.testrail.com",
     "username": "username",
