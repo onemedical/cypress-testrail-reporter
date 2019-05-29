@@ -18,7 +18,7 @@ $ npm install cypress-testrail-reporter --save-dev
 
 Add reporter to your `cypress.json`:
 
-```json
+```javascript
 ...
 {
   "reporter": "salty-cypress-testrail-reporter",
@@ -34,7 +34,7 @@ Add reporter to your `cypress.json`:
 
 Your Cypress tests should include the ID of your TestRail test case. Make sure your test case IDs are distinct from your test titles:
 
-```Javascript
+```javascript
 // Good:
 it("C123 C124 Can authenticate a valid user", ...
 it("Can authenticate a valid user C321", ...
