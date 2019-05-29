@@ -78,5 +78,5 @@ This project is licensed under the [MIT license](/LICENSE.md).
 
 ## Acknowledgments
 
-* [Milutin Savovic](https://github.com/mickosav), author of the [cypress-testrail-reporter](https://github.com/Vivify-Ideas/cypress-testrail-reporter) repository that was cloned.
+* [Milutin Savovic](https://github.com/mickosav), author of the [cypress-testrail-reporter](https://github.com/Vivify-Ideas/cypress-testrail-reporter) repository the forked repository was cloned from (see below)
 * [Spencer Kekauoha](https://github.com/skekauoha), owner of the [salty-cypress-testrail-reporter](https://github.com/skekauoha/salty-cypress-testrail-reporter) repository that was forked.
